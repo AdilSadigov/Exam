@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto 22%;
+    grid-template-rows: 18% auto;
+    grid-template-areas: 
+        "nav aside"
+        "main aside";
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+    
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(43, 43, 155);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+aside {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    grid-area: aside;
+    background-color: rgb(119, 119, 255);
+}
+
+.aside-box {
+    width: 70%;
+    height: 70px;
+    background-color: blue;
+    margin-top: 30px;
+}
+
+main .avatar {
+    display: none;
+}
+
+.avatar {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: grey;
+    border-radius: 30px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: brown;
+    width: 70%;
+    height: 50%;
+    margin-bottom: 80px;
+}
+
+.main-box input {
+    width: 250px;
+    height: 50px;
+    border: none;
+    background-color: rgb(236, 210, 210);
+    padding-left: 20px;
+    font-size: 35px;
+}
+
+.main-box input::placeholder {
+    color: black;
+}
+
+.main-box button {
+    width: 100px;
+    height: 35px;
+    background-color: rgb(236, 210, 210);
+    border: none;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    section {
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto;
+        grid-template-areas: 
+            "nav"
+            "main";
+    }
+    
+    aside {
+        display: none;
+    }
+
+    nav {
+        justify-content: flex-end;
+        padding-right: 30px;
+    }
+
+    main {
+        align-items: flex-start;
+    }
+
+    .main-box {
+        width: 100%;
+    }
+
+    main .avatar {
+        display: block;
+        left: 20px;
+    }
+}
